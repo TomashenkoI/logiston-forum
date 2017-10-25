@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <th:block th:include="fragments/headerinc :: head"></th:block>
+
+</head>
+<body th:inline="text">
+
+<div class="container login">
+    <th:block th:include="fragments/header :: header"></th:block>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

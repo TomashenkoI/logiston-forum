@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+</head>
+<body th:inline="text">
+
+<div class="container">
+    <div th:fragment="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" id="voice-send">Login</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" th:href="@{/themes}">Themes</a></li>
+                    <li><a href="#" th:href="@{/theme/new}">Create Theme</a></li>
+                    <li><a href="#" th:href="@{/registration}">Registration</a></li>
+                    <li><a href="#" th:href="@{/user/user}">Admin Panel</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+</div>
+
+
+<th:block th:include="fragments/headerinc :: head"></th:block>
+</body>
+</html>

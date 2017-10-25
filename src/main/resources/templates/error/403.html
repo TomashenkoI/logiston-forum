@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<div th:replace="fragments/header :: header-css"/>-->
+    <th:block th:include="fragments/headerinc :: head"></th:block>
+
+</head>
+<body th:inline="text">
+
+<!--<div th:replace="fragments/header :: header"/>-->
+
+<div class="container">
+    <th:block th:include="fragments/header :: header"></th:block>
+    <div class="starter-template">
+        <h1>403 - Access is denied</h1>
+        <div th:inline="text">Hello '[[${#httpServletRequest.remoteUser}]]', you do not have permission to access this
+            page.
+        </div>
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
