@@ -77,7 +77,7 @@ public class ThemeController {
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
             User user = userService.findUserByEmail(auth.getName());
             comment.setUser(user);
-//            comment.setTheme(theme);
+            comment.setTheme(theme);
             theme.getComments().add(comment);
 
             themeService.saveTheme(theme);
@@ -100,7 +100,7 @@ public class ThemeController {
 
         comment.setUser(user);
         comment.setDateTime(LocalDateTime.now());
-//        comment.setTheme(themeById);
+        comment.setTheme(themeById);
         themeById.getComments().add(comment);
         themeService.saveTheme(themeById);
 

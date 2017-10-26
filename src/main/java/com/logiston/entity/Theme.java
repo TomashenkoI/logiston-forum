@@ -51,14 +51,14 @@ public class Theme implements Serializable {
         this.comments = comments;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "theme_comments",
-            joinColumns = {@JoinColumn(name = "themeId")},
-            inverseJoinColumns = {@JoinColumn(name = "commentsid")})
-    private List<Comment> comments = new ArrayList<>();
-
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE,
-//        mappedBy = "theme")
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "theme_comments",
+//            joinColumns = {@JoinColumn(name = "themeId")},
+//            inverseJoinColumns = {@JoinColumn(name = "commentsid")})
 //    private List<Comment> comments = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,
+        mappedBy = "theme")
+    private List<Comment> comments = new ArrayList<>();
 
 }

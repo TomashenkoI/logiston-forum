@@ -1,9 +1,7 @@
 package com.logiston.services.impl;
 
-import com.logiston.entity.Comment;
 import com.logiston.entity.Role;
 import com.logiston.entity.User;
-import com.logiston.repository.CommentRepository;
 import com.logiston.repository.RoleRepository;
 import com.logiston.repository.UserRepository;
 import com.logiston.services.UserService;
@@ -29,8 +27,6 @@ public class UserServiceImpl implements UserService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
     private RoleRepository roleRepository;
-    @Autowired
-    private CommentRepository commentRepository;
 
     @Override
     public User findUserByEmail(String email) {
@@ -40,10 +36,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void delete(Long id) {
-        for (Comment comment : getUserById(id).getComments()) {
-            commentRepository.delete(comment);
-        }
-
         userRepository.delete(id);
     }
 

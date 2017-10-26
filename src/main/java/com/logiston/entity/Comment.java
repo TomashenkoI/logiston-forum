@@ -29,13 +29,13 @@ public class Comment implements Serializable {
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-//    @JoinColumn(name = "theme_id", nullable = false)
-//    private Theme theme;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "theme_id", nullable = false)
+    private Theme theme;
 
     public Long getCommentsId() {
         return commentsId;
@@ -69,11 +69,11 @@ public class Comment implements Serializable {
         this.user = user;
     }
 
-//    public Theme getTheme() {
-//        return theme;
-//    }
-//
-//    public void setTheme(Theme theme) {
-//        this.theme = theme;
-//    }
+    public Theme getTheme() {
+        return theme;
+    }
+
+    public void setTheme(Theme theme) {
+        this.theme = theme;
+    }
 }
